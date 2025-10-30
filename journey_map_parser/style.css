@@ -1,0 +1,250 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  background-color: #f8f9fb;
+  color: #1f2933;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.page__header h1 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+}
+
+.page__header p {
+  margin: 0;
+  max-width: 70ch;
+  color: #52606d;
+}
+
+.page__form {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px -35px rgba(15, 23, 42, 0.45);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-weight: 600;
+  color: #1f2933;
+}
+
+.form-field input,
+.form-field textarea {
+  border: 1px solid #cbd2d9;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-field--textarea textarea {
+  min-height: 220px;
+}
+
+button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  justify-self: start;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -18px rgba(99, 102, 241, 0.75);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#loadingIndicator {
+  font-size: 0.95rem;
+  background-color: #eef2ff;
+  color: #3730a3;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  justify-self: start;
+}
+
+.page__output {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.page__output h2 {
+  margin: 0;
+}
+
+.journey-map-placeholder,
+.journey-map {
+  background-color: #ffffff;
+  border-radius: 18px;
+  min-height: 160px;
+  padding: 1.75rem;
+  border: 1px dashed #d2d6dc;
+  color: #52606d;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.journey-map {
+  border: none;
+  display: grid;
+  gap: 1.75rem;
+  text-align: left;
+  place-items: initial;
+}
+
+.journey-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  color: #3e4c59;
+}
+
+.journey-meta span {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  background-color: #f4f5f7;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+}
+
+.phase-lane {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.phase-card {
+  min-width: 260px;
+  background: linear-gradient(140deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 18px;
+  border: 1px solid #e4e7eb;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  position: relative;
+}
+
+.phase-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.75rem;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #cbd2d9;
+  border-right: 2px solid #cbd2d9;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.8;
+}
+
+.phase-card:last-child::after {
+  display: none;
+}
+
+.phase-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1f2933;
+}
+
+.task-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #edf2f7;
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.task-card__title {
+  font-weight: 600;
+  margin: 0;
+  color: #1f2933;
+}
+
+.task-detail {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #52606d;
+}
+
+.task-detail--pain {
+  color: #b91c1c;
+}
+
+.task-detail--opportunity {
+  color: #047857;
+}
+
+.task-detail__label {
+  font-weight: 600;
+}
+
+.task-detail__quote {
+  font-style: italic;
+  color: #364152;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .phase-lane {
+    flex-direction: column;
+  }
+
+  .phase-card {
+    min-width: auto;
+  }
+
+  .phase-card::after {
+    display: none;
+  }
+}

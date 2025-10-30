@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A&R Interview Journey Map Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <h1>A&amp;R Interview Journey Map Generator</h1>
+        <p>
+          Paste your raw interview notes below. Our AI will automatically parse and
+          structure them into a journey map.
+        </p>
+      </header>
+
+      <section class="page__form" aria-label="Interview inputs">
+        <div class="form-field">
+          <label for="arName">A&amp;R Name</label>
+          <input id="arName" type="text" placeholder="Enter the A&amp;R's name" />
+        </div>
+        <div class="form-field">
+          <label for="region">Region</label>
+          <input id="region" type="text" placeholder="e.g., North America" />
+        </div>
+        <div class="form-field">
+          <label for="genreFocus">Genre Focus</label>
+          <input id="genreFocus" type="text" placeholder="e.g., Hip-Hop" />
+        </div>
+
+        <div class="form-field form-field--textarea">
+          <label for="interviewNotes">Interview Notes</label>
+          <textarea
+            id="interviewNotes"
+            rows="12"
+            placeholder="Paste the interview transcript or notes here..."
+          ></textarea>
+        </div>
+
+        <button id="generateMapButton" type="button">Generate Journey Map</button>
+        <div id="loadingIndicator" role="status" aria-live="polite" hidden>
+          Processing notes. Hang tight...
+        </div>
+      </section>
+
+      <section class="page__output" aria-live="polite">
+        <h2>Journey Map Output</h2>
+        <div id="outputContainer" class="journey-map-placeholder">
+          Your journey map will appear here...
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

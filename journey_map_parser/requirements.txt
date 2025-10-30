@@ -1,0 +1,4 @@
+Flask==2.3.3
+Flask-Cors==3.0.10
+# spacy==3.7.2  # Optional: enable for advanced NLP pipelines
+# nltk==3.9      # Optional: classic NLP utilities
